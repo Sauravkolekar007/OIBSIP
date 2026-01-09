@@ -19,6 +19,14 @@ It performs basic arithmetic operations such as addition, subtraction, multiplic
 - Understanding of DOM manipulation
 - Event handling in JavaScript
 - Basic UI design using CSS
+  
+## Project Preview
+![Calculator](preview.png)
+
+## How to Run
+1. Download the project
+2. Open index.html in browser
+3. Use calculator
 
 ## Author
 Saurav Balaso Kolekar
