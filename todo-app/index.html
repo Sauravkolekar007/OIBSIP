@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>To-Do App</title>
+<title>Smart To-Do App</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="todo-container">
-  <h2>My To-Do List</h2>
+<div class="todo-box">
+  <h2>My Task Manager</h2>
 
-  <input type="text" id="taskInput" placeholder="Enter your task">
-  <button class="add-btn" onclick="addTask()">Add Task</button>
+  <input type="text" id="title" placeholder="Task title">
+  <textarea id="desc" placeholder="Task description"></textarea>
 
-  <ul id="taskList"></ul>
+  <button onclick="addTask()">Add Task</button>
+
+  <div id="taskList"></div>
 </div>
 
 <script src="script.js"></script>
