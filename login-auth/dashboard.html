@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+<h2>Welcome</h2>
+<p id="user"></p>
+
+<button onclick="logout()">Logout</button>
+</div>
+
+<script>
+document.getElementById("user").innerText =
+"Logged in as: " + localStorage.getItem("activeUser");
+
+function logout(){
+  localStorage.removeItem("activeUser");
+  window.location.href="login.html";
+}
+</script>
+
+</body>
+</html>
