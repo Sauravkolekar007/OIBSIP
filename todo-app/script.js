@@ -1,70 +1,72 @@
 let taskList = document.getElementById("taskList");
 
 window.onload = function(){
-  let savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  savedTasks.forEach(task => addTaskToDOM(task.text, task.done));
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  tasks.forEach(t => renderTask(t));
 }
 
 function addTask(){
-  let taskInput = document.getElementById("taskInput");
-  let task = taskInput.value.trim();
+  let title = document.getElementById("title").value.trim();
+  let desc = document.getElementById("desc").value.trim();
 
-  if(task === ""){
-    alert("Please enter a task");
+  if(title=="" || desc==""){
+    alert("Fill all fields");
     return;
   }
 
-  addTaskToDOM(task, false);
-  saveTask(task, false);
-  taskInput.value = "";
+  let task = {title,desc,done:false};
+  saveTask(task);
+  renderTask(task);
+
+  document.getElementById("title").value="";
+  document.getElementById("desc").value="";
 }
 
-function addTaskToDOM(task, done){
-  let li = document.createElement("li");
-  li.innerText = task;
+function renderTask(task){
+  let div = document.createElement("div");
+  div.className="task-card";
 
-  if(done){
-    li.classList.add("completed");
+  if(task.done) div.classList.add("completed");
+
+  div.innerHTML=`
+    <h4>${task.title}</h4>
+    <p>${task.desc}</p>
+    <div class="task-actions">
+      <button class="delete">X</button>
+    </div>
+  `;
+
+  div.onclick=function(){
+    div.classList.toggle("completed");
+    toggleTask(task.title);
   }
 
-  li.onclick = function(){
-    li.classList.toggle("completed");
-    updateTaskStatus(task);
-  }
-
-  let delBtn = document.createElement("button");
-  delBtn.innerText = "Delete";
-  delBtn.className = "delete-btn";
-
-  delBtn.onclick = function(e){
+  div.querySelector(".delete").onclick=function(e){
     e.stopPropagation();
-    removeTask(task);
-    li.remove();
+    removeTask(task.title);
+    div.remove();
   }
 
-  li.appendChild(delBtn);
-  taskList.appendChild(li);
+  taskList.appendChild(div);
 }
 
-function saveTask(task, done){
+function saveTask(task){
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasks.push({text: task, done: done});
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  tasks.push(task);
+  localStorage.setItem("tasks",JSON.stringify(tasks));
 }
 
-function updateTaskStatus(task){
+function toggleTask(title){
   let tasks = JSON.parse(localStorage.getItem("tasks"));
-  tasks = tasks.map(t => {
-    if(t.text === task){
-      t.done = !t.done;
-    }
+  tasks = tasks.map(t=>{
+    if(t.title==title) t.done=!t.done;
     return t;
   });
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+  localStorage.setItem("tasks",JSON.stringify(tasks));
 }
 
-function removeTask(task){
-  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasks = tasks.filter(t => t.text !== task);
-  localStorage.setItem("tasks", JSON.stringify(tasks));
+function removeTask(title){
+  let tasks = JSON.parse(localStorage.getItem("tasks"));
+  tasks = tasks.filter(t=>t.title!==title);
+  localStorage.setItem("tasks",JSON.stringify(tasks));
 }
