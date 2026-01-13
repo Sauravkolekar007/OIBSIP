@@ -34,7 +34,7 @@ Open `index.html` in browser.
 
 ## 📸 Preview
 
-preview.jpg
+preview.png
 
 ---
 
