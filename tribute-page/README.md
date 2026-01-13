@@ -1,23 +1,43 @@
-# Tribute Page
+# MS Dhoni Tribute Page
 
-## Description
-This is a tribute page created to honor and describe a well-known personality.
-The page includes an image, important life details, and achievements presented in a clean layout.
+A responsive tribute page dedicated to  
+Mahendra Singh Dhoni – Captain Cool 🏏
 
-## Features
+---
+
+## 🚀 Features
+
+- Hero section
+- Biography
+- Career timeline
+- Quotes
+- Photo gallery
+- Scroll to top button
+- Animations
 - Responsive design
-- Image and text content
-- Simple and elegant UI
-- Informative biography section
 
-## Technologies Used
+---
+
+## 🛠 Tech Stack
+
 - HTML
 - CSS
+- JavaScript
 
-## Learning Outcome
-- Structuring content using HTML
-- Styling layouts using CSS
-- Improving presentation and design skills
+---
 
-## Author
+## ▶ How to Run
+
+Open `index.html` in browser.
+
+---
+
+## 📸 Preview
+
+(Add screenshot here)
+
+---
+
+## 👨‍💻 Author
+
 Saurav Balaso Kolekar
