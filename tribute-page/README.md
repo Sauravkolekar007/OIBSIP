@@ -34,7 +34,7 @@ Open `index.html` in browser.
 
 ## 📸 Preview
 
-preview.png
+![Project Preview](preview.png)
 
 ---
 
