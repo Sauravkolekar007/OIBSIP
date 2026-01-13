@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tribute to MS Dhoni</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="hero">
+  <h1>Mahendra Singh Dhoni</h1>
+  <p>Captain Cool | Finisher | Legend</p>
+</section>
+
+<section class="profile">
+  <img src="dhoni.jpg" alt="MS Dhoni">
+  <p>
+    MS Dhoni is a former Indian cricketer and one of the most successful captains in the history of Indian cricket.
+    Known for his calm leadership and finishing skills, Dhoni led India to multiple ICC trophies.
+  </p>
+</section>
+<section class="gallery">
+<h2>Photo Gallery</h2>
+
+<div class="images">
+  <img src="dhoni.jpg">
+  <img src="dhoni2.jpg">
+  <img src="dhoni3.jpg">
+</div>
+</section>
+
+
+<section class="timeline">
+  <h2>Career Timeline</h2>
+  <ul>
+    <li><strong>2004</strong> – Debut in international cricket</li>
+    <li><strong>2007</strong> – Won T20 World Cup as captain</li>
+    <li><strong>2011</strong> – Won ICC Cricket World Cup</li>
+    <li><strong>2013</strong> – Won Champions Trophy</li>
+    <li><strong>2020</strong> – Retired from international cricket</li>
+  </ul>
+</section>
+
+<section class="quotes">
+  <h2>Famous Quotes</h2>
+  <blockquote>
+    “You don’t play for the crowd, you play for the country.”
+  </blockquote>
+  <blockquote>
+    “Take action in silence, no lion attacks in noise.”
+  </blockquote>
+</section>
+
+<footer>
+  <p>Tribute Page created by Saurav Balaso Kolekar</p>
+</footer>
+<button id="topBtn" onclick="goTop()">↑</button>
+
+<script>
+window.onscroll=function(){
+  document.getElementById("topBtn").style.display =
+  window.scrollY>200?"block":"none";
+}
+
+function goTop(){
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
